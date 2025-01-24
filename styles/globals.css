@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+* Custom CSS
+*/
+:root {
+    --custom-dark-bg: #0d0d0d;
+}
