@@ -1,12 +1,17 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Tidy App - Stay Organized, Get Things Done with Ease",
+  description:
+    "Simplify your day, boost productivity, and keep life tidy with ease!",
   navItems: [
     {
       label: "Home",
       href: "/",
+    },
+    {
+      label: "About",
+      href: "/about",
     },
     {
       label: "Docs",
@@ -16,14 +21,6 @@ export const siteConfig = {
       label: "Pricing",
       href: "/pricing",
     },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
-    },
   ],
   navMenuItems: [
     {
@@ -31,20 +28,16 @@ export const siteConfig = {
       href: "/profile",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
+      label: "Tasks",
+      href: "/tasks",
     },
     {
       label: "Calendar",
       href: "/calendar",
+    },
+    {
+      label: "Projects",
+      href: "/projects",
     },
     {
       label: "Settings",
@@ -60,10 +53,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: "https://github.com/edev0x/tidy-app",
+    docs: "https://github.com/edev0x/tidy-app",
+    sponsor: "https://github.com/edev0x/tidy-app",
   },
 };

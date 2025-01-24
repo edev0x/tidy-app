@@ -1,56 +1,47 @@
-import { Link } from "@heroui/link";
-import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
-import { button as buttonStyles } from "@heroui/theme";
+import { Button } from "@heroui/button";
+import Link from "next/link";
 
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import { subtitle, title } from "@/components/primitives";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className="inline-block max-w-xl text-center justify-center">
-        <span className={title()}>Make&nbsp;</span>
-        <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
-        <br />
-        <span className={title()}>
-          websites regardless of your design experience.
-        </span>
-        <div className={subtitle({ class: "mt-4" })}>
-          Beautiful, fast and modern React UI library.
+    <section className="flex flex-col items-center justify-center">
+      <section className="flex relative overflow-hidden lg:overflow-visible w-full flex-nowrap justify-between items-center h-[calc(100vh_-_64px)] 2xl:h-[calc(84vh_-_64px)]">
+        <div className="relative z-20 flex flex-col w-full gap-6 lg:w-1/2 xl:mt-8">
+          <div className="leading-8 text-center md:leading-10 md:text-left">
+            <div className="inline-block">
+              <h1 className="tracking-tight inline font-semibold text-[clamp(1rem,10vw,2rem)] sm:text-[clamp(1.5rem,10vw,3rem)] md:text-[clamp(1rem,10vw,3rem)] lg:text-5xl">
+                <span className="font-bold dark:text-white">Boost 🚀 </span>
+                productivity by effortlessly managing your{" "}
+                <span className={title({ color: "blue" })}>
+                  {" "}
+                  daily tasks
+                </span>{" "}
+                team&apos;s progress.
+              </h1>
+            </div>
+            <div className={subtitle({ class: "mt-8" })}>
+              Tidy is a powerful task manager that helps you stay organized
+              things done with ease.
+            </div>
+
+            <div>
+              <div className="mt-8">
+                <Button
+                  as={Link}
+                  color="primary"
+                  href="/getting-started"
+                  size="lg"
+                  type="button"
+                  variant="solid"
+                >
+                  Get started
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-          href={siteConfig.links.docs}
-        >
-          Documentation
-        </Link>
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
-        </Link>
-      </div>
-
-      <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
-      </div>
+      </section>
     </section>
   );
 }
