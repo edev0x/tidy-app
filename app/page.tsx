@@ -17,12 +17,12 @@ export default function Home() {
                   {" "}
                   daily tasks
                 </span>{" "}
-                team&apos;s progress.
+                and your team&apos;s progress.
               </h1>
             </div>
             <div className={subtitle({ class: "mt-8" })}>
-              Tidy is a powerful task manager that helps you stay organized
-              things done with ease.
+              Tidy is a powerful task manager that helps you stay organized with
+              ease.
             </div>
 
             <div>
