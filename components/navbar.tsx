@@ -15,9 +15,13 @@ import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
+import { AuthFlowNavBarButtons } from "./navigation/nav-buttons";
+
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, HeartFilledIcon, SearchIcon } from "@/components/icons";
+
+import { useUser } from "@auth0/nextjs-auth0";
 
 export const Navbar = () => {
   const searchInput = (
@@ -89,6 +93,9 @@ export const Navbar = () => {
             Sponsor
           </Button>
         </NavbarItem>
+        <NavbarItem>
+          <AuthFlowNavBarButtons />
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
@@ -100,26 +107,11 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        {searchInput}
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
-                size="lg"
-              >
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </div>
+        <NavbarMenuItem>
+          <Button color="primary" variant="flat">
+            <a href="/auth/login?">Sign In</a>
+          </Button>
+        </NavbarMenuItem>
       </NavbarMenu>
     </HeroUINavbar>
   );
